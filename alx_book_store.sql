@@ -2,7 +2,7 @@ import mysql.connector
 mydb = mysql.connector.connect( host="localhost", user="root", password="1234", database="ALX_BOOK_STORE")
 mycursor = mydb.cursor()
 
-CREATE DATABASE IF NOT EXISTS ALX_BOOK_STORE;
+CREATE DATABASE IF NOT EXISTS alx_book_store;
 USE ALX_BOOK_STORE;
 
 
