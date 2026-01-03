@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS Order_Details (
     quantity DOUBLE NOT NULL,
     CONSTRAINT FK_ORDERDETAILS_ORDERS FOREIGN KEY (order_id)
         REFERENCES Orders(order_id)
+        FOREIGN KEY (order_id) REFERENCES Orders(order_id)", "FOREIGN KEY (book_id) REFERENCES Books(book_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     CONSTRAINT FK_ORDERDETAILS_BOOKS FOREIGN KEY (book_id)
