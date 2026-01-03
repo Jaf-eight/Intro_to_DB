@@ -1,2 +1,2 @@
-# Intro_to_DBd
+# Intro_to_DB
 DB focused
