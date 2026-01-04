@@ -35,3 +35,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print(all(word not in open("MySQLServer.py").read().upper() for word in ["SELECT", "SHOW"]))
