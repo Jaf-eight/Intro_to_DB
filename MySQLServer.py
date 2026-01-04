@@ -84,3 +84,36 @@ finally:
         cursor.close()
     if 'conn' in locals() and conn.is_connected():
         conn.close()
+#except mysql.connector.Error
+
+#!/usr/bin/env python3
+# MySQLServer.py — create the database `alx_book_store` safely and briefly
+
+import mysql.connector
+
+DB_NAME = "alx_book_store"
+
+def main():
+    conn = None
+    cursor = None
+    try:
+        # Connect to server without selecting a database
+        conn = mysql.connector.connect(host="localhost", user="root", password="1234")
+        cursor = conn.cursor()
+
+        # Create DB (won’t fail if it already exists); no SELECT/SHOW used
+        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+
+        print(f"Database '{DB_NAME}' created successfully!")
+    except mysql.connector.Error as e:
+        print(f"Error (MySQL): {e}")
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None and conn.is_connected():
+            conn.close()
+
+if __name__ == "__main__":
+    main()
